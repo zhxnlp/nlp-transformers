@@ -1,0 +1,41 @@
+#加载的fasttext预训练词向量都是vec格式的，但fasttext无监督训练后却是bin格式，因此需要进行转换
+# 以下代码为fasttext官方推荐：
+# 请将以下代码保存在bin_to_vec.py文件中
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import division, absolute_import, print_function
+
+from fasttext import load_model
+import argparse
+import errno
+
+if __name__ == "__main__":
+    # 整个代码逻辑非常简单
+    # 以bin格式的模型为输入参数
+    # 按照vec格式进行文本写入
+    # 可通过head -5 xxx.vec进行文件查看
+    parser = argparse.ArgumentParser(
+        description=("Print fasttext .vec file to stdout from .bin file")
+    )
+    parser.add_argument(
+        "model",
+        help="Model to use",
+    )
+    args = parser.parse_args()
+
+    f = load_model(args.model)
+    words = f.get_words()
+    print(str(len(words)) + " " + str(f.get_dimension()))
+    for w in words:
+        v = f.get_word_vector(w)
+        vstr = ""
+        for vi in v:
+            vstr += " " + str(vi)
+        try:
+            print(w + vstr)
+        except IOError as e:
+            if e.errno == errno.EPIPE:
+                pass
+
