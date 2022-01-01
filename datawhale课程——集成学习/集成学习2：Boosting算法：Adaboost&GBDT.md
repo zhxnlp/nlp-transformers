@@ -1,4 +1,9 @@
-﻿@[toc]
+$$
+$$sign(x)=\begin{cases}
+1 & \text{ if } x\geqslant 0 \\ 
+-1 & \text{ if } x< 0 
+\end{cases}   $$ 
+@[toc]
 ## 一、 Boosting算法原理
 - Bagging：<font color='red'>通过Bootstrap 的方式对全样本数据集进行抽样得到抽样子集，对不同的子集使用同一种基本模型进行拟合，然后投票得出最终的预测。
 - Bagging主要通过降低方差的方式减少预测误差</font>
