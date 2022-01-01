@@ -1,4 +1,4 @@
-$$
+
 $$sign(x)=\begin{cases}
 1 & \text{ if } x\geqslant 0 \\ 
 -1 & \text{ if } x< 0 
