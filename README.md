@@ -1,4 +1,3 @@
-$y_i梯度=Wx_i+b。$
 # nlp-transformers
 这里包含我做过的三个项目：
 - 天池-新闻文本分类（10月datawhale群的赛事项目之一）
