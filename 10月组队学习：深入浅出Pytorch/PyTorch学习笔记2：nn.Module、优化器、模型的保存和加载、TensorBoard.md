@@ -16,6 +16,7 @@ class Model(nn.Module):
         ret = ... # 根据传入的张量和子模块计算返回张量
         return ret
 ```
+<!--more-->
 - __init\__方法初始化整个模型
 -  super(Model, self).__init\__():调用父类nn.Module的初始化方法，初始化必要的变量和参数
 - 定义前向传播模块

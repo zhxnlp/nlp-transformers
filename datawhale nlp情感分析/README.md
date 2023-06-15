@@ -1,2 +1,0 @@
-# bert
-transformer for NLP
